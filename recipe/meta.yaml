@@ -12,18 +12,19 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools_scm
   run:
     - importlib-metadata
     - pyscaffold >=4.0b4,<5.0a0
     - pyscaffoldext-markdown >=0.4b2,<1.0a0
-    - python
+    - python >=3.6
 
 # For an implementation of unit tests which work except for Windows, see
 #    https://github.com/conda-forge/staged-recipes/commit/f3c5e9f
@@ -33,9 +34,7 @@ test:
     - pyscaffoldext.dsproject
   commands:
     - pip check
-    # Just do a simple check here. Maybe in the future we can at least do something
-    # like `putup --pretend --dsproject targetdir`, but currently git must be configured.
-    - putup --help
+    - 'putup --help | grep dsproject'
   requires:
     - pip
 
