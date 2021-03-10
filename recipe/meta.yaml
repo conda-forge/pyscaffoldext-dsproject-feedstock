@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - setuptools_scm
+    - setuptools-scm
   run:
     - importlib-metadata
     - pyscaffold >=4.0b4,<5.0a0
