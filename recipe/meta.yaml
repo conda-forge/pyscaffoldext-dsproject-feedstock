@@ -1,5 +1,5 @@
 {% set name = "pyscaffoldext-dsproject" %}
-{% set version = "0.6" %}
+{% set version = "0.6.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-dsproject-{{ version }}.tar.gz
-  sha256: c8b072f2c90b5966ca11669dae8744dbe53285f6883759a9e845e4176176abfd
+  sha256: fd8742b3e4fae4e743f3a507b656a225fa60c781e6db334a4f77d8e9a0d01a5f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -34,7 +34,7 @@ test:
     - pyscaffoldext.dsproject
   commands:
     - pip check
-    - 'putup --help | grep dsproject'
+    - putup --help | grep dsproject
   requires:
     - pip
 
