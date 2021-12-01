@@ -1,5 +1,5 @@
 {% set name = "pyscaffoldext-dsproject" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-dsproject-{{ version }}.tar.gz
-  sha256: fd8742b3e4fae4e743f3a507b656a225fa60c781e6db334a4f77d8e9a0d01a5f
+  sha256: c78fc7225d2e98472ced0713a70f3edafe616249be57997b4cb79c79d943a8a5
 
 build:
   number: 0
