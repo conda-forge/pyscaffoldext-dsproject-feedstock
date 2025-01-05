@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-dsproject-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-dsproject-{{ version }}.tar.gz
   sha256: 485f7d9e80fa0b7d69e0b5a5c1503002b3d878db2917e0112bc0f39790754fd8
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - importlib-metadata
     - pyscaffold >=4.0.1,<5.0a0
     - pyscaffoldext-markdown >=0.4.1,<1.0a0
-    - python >=3.6
+    - python >={{ python_min }}
 
 # For an implementation of unit tests which work except for Windows, see
 #    https://github.com/conda-forge/staged-recipes/commit/f3c5e9f
@@ -37,6 +37,7 @@ test:
     - putup --help | grep dsproject
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pyscaffold/pyscaffoldext-dsproject
